@@ -1,0 +1,12 @@
+<h2>Customer Details</h2>
+
+<div *ngIf="customer">
+  <img [src]="customer.profilePicture" width="150">
+  <p><strong>Name:</strong> {{ customer.fullName }}</p>
+  <p><strong>Email:</strong> {{ customer.email }}</p>
+  <p><strong>Phone:</strong> {{ customer.phoneNumber }}</p>
+  <p><strong>Type:</strong> {{ customer.customerType }}</p>
+  <p><strong>Date of Registration:</strong> {{ customer.dateOfRegistration }}</p>
+</div>
+
+<a mat-button routerLink="/customers">Back to List</a>

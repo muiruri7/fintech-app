@@ -1,0 +1,35 @@
+<h2>Add New Account</h2>
+<form [formGroup]="accountForm" (ngSubmit)="submitForm()">
+  <mat-form-field>
+    <mat-label>Customer</mat-label>
+    <mat-select formControlName="customerId">
+      <mat-option *ngFor="let customer of customers" [value]="customer.id">
+        {{ customer.fullName }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Account Type</mat-label>
+    <mat-select formControlName="accountType">
+      <mat-option value="Savings">Savings</mat-option>
+      <mat-option value="Checking">Checking</mat-option>
+      <mat-option value="Business">Business</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="number" placeholder="Initial Balance" formControlName="balance">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Status</mat-label>
+    <mat-select formControlName="status">
+      <mat-option value="Active">Active</mat-option>
+      <mat-option value="Suspended">Suspended</mat-option>
+      <mat-option value="Closed">Closed</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-button color="primary" type="submit" [disabled]="accountForm.invalid">Save</button>
+</form>
