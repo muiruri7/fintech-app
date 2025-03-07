@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { LocalStorageService } from './local-storage.service';
 import { Transaction } from '../models/transaction';
 import { AccountService } from './account.service';
-import { Account } from '../models/account';
+// import { Account } from '../models/account';
 import { v4 as uuidv4 } from 'uuid';
 
 @Injectable({
